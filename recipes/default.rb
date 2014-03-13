@@ -34,13 +34,17 @@ remote_file "#{Chef::Config['file_cache_path']}/#{node['my_jboss_app']['app']}.z
   source "#{node['my_jboss_app']['mirror']}/#{node['my_jboss_app']['app']}.zip"
 end
 
+package 'unzip' do
+    action [:install]
+end
+
 bash 'extract-archive' do
     user user
     group group
     cwd home
 code <<-EOH
 rm -rf *
-unzip #{Chef::Config['file_cache_path']}/#{node['my_jboss_app']['app']}.zip
+unzip "#{Chef::Config['file_cache_path']}/#{node['my_jboss_app']['app']}.zip"
 EOH
 end
 
