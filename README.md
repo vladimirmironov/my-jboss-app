@@ -1,8 +1,7 @@
 Description
 ===========
-Recipe should download, unpack and put applicationjars to Jboss deploy folder. Then restart Jboss.
-http://www.cumulogic.com/download/Apps/testweb.zip
 
+6. http://www.cumulogic.com/download/Apps/hudson.zip
 
 Requirements
 ============
